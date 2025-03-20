@@ -1,6 +1,7 @@
 import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
+import os
 
 # Device setup
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -9,8 +10,15 @@ labels = ["Non-Hate", "Offensive", "Hate"]
 # Load model and tokenizer
 @st.cache_resource  # Cache to load model only once
 def load_model_and_tokenizer():
-    model = BertForSequenceClassification.from_pretrained("odd_layer_best").to(device)
-    tokenizer = BertTokenizer.from_pretrained("odd_layer_best")
+    model_path = "odd_layer_best"
+    
+    # Verify model directory exists
+    if not os.path.exists(model_path):
+        st.error(f"Model directory '{model_path}' not found. Please ensure it’s uploaded to the repository.")
+        raise FileNotFoundError(f"Model directory '{model_path}' not found.")
+    
+    model = BertForSequenceClassification.from_pretrained(model_path).to(device)
+    tokenizer = BertTokenizer.from_pretrained(model_path)
     model.eval()
     return model, tokenizer
 
@@ -28,8 +36,12 @@ def main():
     st.title("Hate Speech Detector")
     st.write("Enter text below to classify it as Non-Hate, Offensive, or Hate.")
 
-    # Load model and tokenizer
-    model, tokenizer = load_model_and_tokenizer()
+    # Load model and tokenizer with error handling
+    try:
+        model, tokenizer = load_model_and_tokenizer()
+    except Exception as e:
+        st.error(f"Failed to load model: {str(e)}")
+        return
 
     # Text input
     user_input = st.text_area("Your Text", placeholder="Type here...")
