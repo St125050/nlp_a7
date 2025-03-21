@@ -1,12 +1,11 @@
 # nlp_a7
 
+[Performance Plot](Screenshot (501).png)
+[Performance Plot](Screenshot (502).png)
 ```markdown
 # Hate Speech Detector
 
 This repository implements a hate speech detection system using BERT-based models, comparing knowledge distillation and LoRA approaches. The best-performing model (odd-layer distilled) is deployed via a Streamlit web app.
-
-[Performance Plot](Screenshot (501).png)
-[Performance Plot](Screenshot (502).png)
 ---
 
 ## Project Overview
