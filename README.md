@@ -5,6 +5,8 @@
 
 This repository implements a hate speech detection system using BERT-based models, comparing knowledge distillation and LoRA approaches. The best-performing model (odd-layer distilled) is deployed via a Streamlit web app.
 
+![Performance Plot](Screenshot (501).png)
+![Performance Plot](Screenshot (502).png)
 ---
 
 ## Project Overview
@@ -175,7 +177,7 @@ git push origin main
 
 The odd-layer model is deployed due to its superior performance.
 
-
+![Performance Plot](download (9).png)
 ## Model Performance
 
 | Model Type    | Training Loss (Epoch 5) | Test Set Performance |
