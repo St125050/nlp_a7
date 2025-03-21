@@ -1,6 +1,6 @@
 # nlp_a7
 
-![Performance Plot](download%20(9).png)
+
 ![Performance Plot](Screenshot%20(501).png)
 ![Performance Plot](Screenshot%20(502).png)
 
@@ -177,8 +177,7 @@ git push origin main
 | LoRA          | 0.7730        |
 
 The odd-layer model is deployed due to its superior performance.
-
-![Performance Plot](download (9).png)
+![Performance Plot](download%20(9).png)
 ## Model Performance
 
 | Model Type    | Training Loss (Epoch 5) | Test Set Performance |
