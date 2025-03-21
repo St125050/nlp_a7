@@ -1,7 +1,9 @@
 # nlp_a7
 
-[Performance Plot](Screenshot (501).png)
-[Performance Plot](Screenshot (502).png)
+![Performance Plot](download%20(9).png)
+![Performance Plot](Screenshot%20(501).png)
+![Performance Plot](Screenshot%20(502).png)
+
 ```markdown
 # Hate Speech Detector
 
